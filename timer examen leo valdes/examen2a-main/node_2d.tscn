@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0kum0sxnbrmf"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_sdumq"]
+[ext_resource type="Texture2D" uid="uid://xo46nr0kicej" path="res://assets/timer.png" id="2_j7pm4"]
+
+[node name="Node2D" type="CanvasLayer"]
+script = ExtResource("1_sdumq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(598, 299)
+scale = Vector2(0.432331, 0.487996)
+texture = ExtResource("2_j7pm4")
+
+[node name="Timer_principal" type="Timer" parent="."]
+
+[node name="Decimales_label" type="Label" parent="."]
+offset_left = 705.0
+offset_top = 225.0
+offset_right = 762.0
+offset_bottom = 280.0
+theme_override_font_sizes/font_size = 40
+text = ".0"
+
+[node name="Segundos_label" type="Label" parent="."]
+offset_left = 567.0
+offset_top = 165.0
+offset_right = 708.0
+offset_bottom = 302.0
+theme_override_font_sizes/font_size = 100
+text = ":00"
+
+[node name="Start_timer" type="Button" parent="."]
+offset_left = 552.0
+offset_top = 434.0
+offset_right = 604.0
+offset_bottom = 489.0
+theme_override_font_sizes/font_size = 30
+text = "S"
