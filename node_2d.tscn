@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0kum0sxnbrmf"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_sdumq"]
+[ext_resource type="Texture2D" uid="uid://xo46nr0kicej" path="res://assets/timer.png" id="2_j7pm4"]
+[ext_resource type="FontFile" uid="uid://bttn4sbekg567" path="res://assets/alarm clock.ttf" id="3_wlbyo"]
+[ext_resource type="AudioStream" uid="uid://b8yvtsefww22p" path="res://assets/Y2meta.app - Bomba De Tiempo - Efecto De Sonido (128 kbps).mp3" id="4_cuhkl"]
+
+[node name="Main" type="CanvasLayer"]
+script = ExtResource("1_sdumq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(598, 299)
+scale = Vector2(0.432331, 0.487996)
+texture = ExtResource("2_j7pm4")
+
+[node name="MainTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="CLabel" type="Label" parent="."]
+offset_left = 705.0
+offset_top = 241.0
+offset_right = 762.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("3_wlbyo")
+theme_override_font_sizes/font_size = 40
+text = ".0"
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 449.0
+offset_top = 196.0
+offset_right = 712.0
+offset_bottom = 301.0
+theme_override_fonts/font = ExtResource("3_wlbyo")
+theme_override_font_sizes/font_size = 100
+text = "00:00"
+
+[node name="ModeLabel" type="Label" parent="."]
+offset_left = 676.0
+offset_top = 151.0
+offset_right = 733.0
+offset_bottom = 169.0
+theme_override_fonts/font = ExtResource("3_wlbyo")
+text = "TIMER
+"
+
+[node name="StatusLabel" type="Label" parent="."]
+offset_left = 419.0
+offset_top = 150.0
+offset_right = 467.0
+offset_bottom = 173.0
+theme_override_fonts/font = ExtResource("3_wlbyo")
+text = "STOP"
+
+[node name="SetLabel" type="Label" parent="."]
+offset_left = 801.0
+offset_top = 391.0
+offset_right = 845.0
+offset_bottom = 414.0
+rotation = -1.53832
+text = "Mode"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 683.0
+offset_top = 423.0
+offset_right = 755.0
+offset_bottom = 500.0
+
+[node name="MinButton" type="Button" parent="."]
+offset_left = 422.0
+offset_top = 420.0
+offset_right = 495.0
+offset_bottom = 502.0
+theme_override_fonts/font = ExtResource("3_wlbyo")
+theme_override_font_sizes/font_size = 70
+text = "M"
+
+[node name="SecButton" type="Button" parent="."]
+offset_left = 543.0
+offset_top = 420.0
+offset_right = 622.0
+offset_bottom = 496.0
+theme_override_fonts/font = ExtResource("3_wlbyo")
+theme_override_font_sizes/font_size = 70
+text = "S"
+
+[node name="ClearButton" type="Button" parent="."]
+offset_left = 674.0
+offset_top = 98.0
+offset_right = 747.0
+offset_bottom = 116.0
+theme_override_fonts/font = ExtResource("3_wlbyo")
+text = "CLEAR"
+
+[node name="ModeButton" type="Button" parent="."]
+offset_left = 848.0
+offset_top = 328.0
+offset_right = 858.0
+offset_bottom = 340.0
+
+[node name="StopTimerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cuhkl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 438.0
+offset_top = 575.0
+offset_right = 742.0
+offset_bottom = 606.0
+text = "Leoanardo Andreu Valdes Villagomez"
+
+[connection signal="timeout" from="MainTimer" to="." method="_on_main_timer_timeout"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MinButton" to="." method="_on_min_button_pressed"]
+[connection signal="pressed" from="SecButton" to="." method="_on_sec_button_pressed"]
+[connection signal="pressed" from="ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="ModeButton" to="." method="_on_mode_button_pressed"]
